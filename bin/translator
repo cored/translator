@@ -10,7 +10,7 @@ TEXT_VAR="&text="
 
 class String
   def translate(from, to) 
-    url = "#{URL_STRING}#{from}|#{to}#{TEXT_VAR}"
+    url = "#{URL_STRING}#{from}|#{to}#{TEXT_VAR}#{self}"
   end
 end
 
