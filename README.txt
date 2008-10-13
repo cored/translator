@@ -1,26 +1,14 @@
 translator
-    by FIXME (your name)
-    FIXME (url)
+    by Rafael George
+    http://bandw.tumblr.com
 
 == DESCRIPTION:
 
-FIXME (describe your package)
-
-== FEATURES/PROBLEMS:
-
-* FIXME (list of features or problems)
+This is port from the Google Translate Java API
 
 == SYNOPSIS:
 
   FIXME (code sample of usage)
-
-== REQUIREMENTS:
-
-* FIXME (list of requirements)
-
-== INSTALL:
-
-* FIXME (sudo gem install, anything else)
 
 == LICENSE:
 
