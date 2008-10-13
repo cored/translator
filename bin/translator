@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require File.expand_path(
+    File.join(File.dirname(__FILE__), '..', 'lib', 'translator'))
+
+# Put your code here
+    
+URL_STRING="http://translate.google.com/translate_t?langpair="
+TEXT_VAR="&text="
+
+class String
+  def translate(from, to) 
+    url = "#{URL_STRING}#{from}|#{to}#{TEXT_VAR}"
+  end
+end
+
+
+# EOF
