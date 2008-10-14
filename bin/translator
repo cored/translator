@@ -1,18 +1,33 @@
 #!/usr/bin/env ruby
 
-require File.expand_path(
-    File.join(File.dirname(__FILE__), '..', 'lib', 'translator'))
+#require File.expand_path(
+#    File.join(File.dirname(__FILE__), '..', 'lib', 'translator'))
 
 # Put your code here
-    
+require 'open-uri'
+require 'uri'
+
+ENGLISH = "en"
+SPANISH = "es"
+
 URL_STRING="http://translate.google.com/translate_t?langpair="
 TEXT_VAR="&text="
 
-class String
-  def translate(from, to) 
-    url = "#{URL_STRING}#{from}|#{to}#{TEXT_VAR}#{self}"
+class Translator
+
+  def initialize(text)
+    @text = URI.escape(text, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
   end
+
+  def translate(from, to) 
+    url = "#{URL_STRING}#{from}|#{to}#{TEXT_VAR}#{@text}"
+    open(url) do |line|
+      puts line
+    end
+  end
+
 end
 
+Translator.new("hello world").translate(ENGLISH, SPANISH)
 
 # EOF
