@@ -10,6 +10,10 @@ This is port from the Google Translate Java API
 
   FIXME (code sample of usage)
 
+== DEPENDENCIES:
+
+  Hpricot
+
 == LICENSE:
 
 (The MIT License)
