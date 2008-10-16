@@ -4,8 +4,10 @@
 #    File.join(File.dirname(__FILE__), '..', 'lib', 'translator'))
 
 # Put your code here
+require 'rubygems'
 require 'open-uri'
 require 'uri'
+require 'hpricot'
 
 ENGLISH = "en"
 SPANISH = "es"
@@ -20,14 +22,13 @@ class Translator
   end
 
   def translate(from, to) 
-    url = "#{URL_STRING}#{from}|#{to}#{TEXT_VAR}#{@text}"
-    open(url) do |line|
-      puts line
-    end
+    url = "#{URL_STRING}#{from}#{URI.escape("|")}#{to}#{TEXT_VAR}#{@text}"
+    hp = Hpricot(open(url)) 
+    (hp/"div#result_box").inner_text
   end
 
 end
 
-Translator.new("hello world").translate(ENGLISH, SPANISH)
+puts Translator.new("hello world").translate(ENGLISH, SPANISH)
 
 # EOF
