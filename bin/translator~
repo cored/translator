@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+
+#require File.expand_path(
+#    File.join(File.dirname(__FILE__), '..', 'lib', 'translator'))
+
+# Put your code here
+require 'rubygems'
+require 'open-uri'
+require 'uri'
+require 'hpricot'
+
+ENGLISH = "en"
+CHINESE = "zh"
+CHINESE_SIMPLIFIED  = "zh-CN"
+CHINESE_TRADITIONAL = "zh-TW"
+FRENCH = "fr"
+GERMAN = "de"
+ITALIAN = "it"
+JAPANESE = "jp"
+KOREAN = "ko"
+PORTUGESE = "pt"
+RUSSIAN = "ru"
+SPANISH = "es"
+
+URL_STRING="http://translate.google.com/translate_t?langpair="
+TEXT_VAR="&text="
+
+class Translator
+
+  def initialize(text)
+    @text = URI.escape(text, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+  end
+
+  def translate(from, to) 
+    url = "#{URL_STRING}#{from}#{URI.escape("|")}#{to}#{TEXT_VAR}#{@text}"
+    hp = Hpricot(open(url)) 
+    (hp/"div#result_box").inner_text
+  end
+
+end
+
+puts Translator.new("good afternoon").translate(ENGLISH, SPANISH)
+
+# EOF
