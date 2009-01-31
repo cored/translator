@@ -1,5 +1,5 @@
 module Translator
-  module Const
+  module Constants
 
     ENGLISH                           = "en"
     CHINESE                           = "zh"

@@ -49,8 +49,6 @@ module Translator
 
 end  # module Translator
 
-require "translator/autoload"
-
 Translator.require_all_libs_relative_to __FILE__
 
 end  # unless defined?

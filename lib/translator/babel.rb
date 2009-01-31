@@ -13,7 +13,7 @@ module Translator
     end
 
     def translate(from, to) 
-      url = "#{Translator::Const::URL_STRING}#{from}#{URI.escape("|")}#{to}#{Translator::Const::TEXT_VAR}#{@text}"
+      url = "#{Translator::Constants::URL_STRING}#{from}#{URI.escape("|")}#{to}#{Translator::Constants::TEXT_VAR}#{@text}"
       hp = Hpricot(open(url)) 
       (hp/"div#result_box").inner_text
     end
