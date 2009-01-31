@@ -27,6 +27,22 @@ describe Translator do
   it "should return 'boa tarde'" do
     @babel.translate(Translator::Constants::ENGLISH, Translator::Constants::PORTUGESE).should == "boa tarde"
   end
+
+  it "should translate to japanese" do
+    pending
+  end
+
+  it "should translate to simplified chinese" do
+    pending
+  end
+
+  it "should translate to chinese" do
+    pending
+  end
+
+  it "should translate to russian" do
+    pending
+  end
   
 end
 
