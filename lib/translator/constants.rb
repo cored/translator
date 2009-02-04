@@ -1,6 +1,7 @@
 module Translator
   module Constants
     LANGUAGES = {                          
+      :arabic => "ar",
       :english => "en",
       :chinese => "zh",
       :chiense_simplified => "zh-CN",

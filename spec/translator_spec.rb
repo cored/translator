@@ -28,6 +28,10 @@ describe Translator do
     @babel.translate(Translator::Constants::LANGUAGES[:english], Translator::Constants::LANGUAGES[:portugese]).should == "boa tarde"
   end
 
+  it "should translate to arabic" do
+    @babel.translate(Translator::Constants::LANGUAGES[:english], Translator::Constants::LANGUAGES[:arabic]).should == "\331\205\330\263\330\247\330\241 \330\247\331\204\330\256\331\212\330\261"
+  end
+
   it "should translate to japanese" do
     pending
   end
