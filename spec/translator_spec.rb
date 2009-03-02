@@ -2,6 +2,7 @@
 
 require File.join(File.dirname(__FILE__), %w[spec_helper])
 
+include Translator::Constants
 describe Translator do
 
   before(:each) do
@@ -9,23 +10,23 @@ describe Translator do
   end
 
   it "should return 'buenas tardes'" do
-    @babel.translate(Translator::Constants::ENGLISH, Translator::Constants::SPANISH).should == "buenas tardes"
+    @babel.translate(ENGLISH, SPANISH).should == "buenas tardes"
   end
 
   it "should return 'bonjour'" do
-    @babel.translate(Translator::Constants::ENGLISH, Translator::Constants::FRENCH).should == "bonjour"
+    @babel.translate(ENGLISH, FRENCH).should == "bonjour"
   end
 
   it "should return 'Guten Tag'" do
-    @babel.translate(Translator::Constants::ENGLISH, Translator::Constants::GERMAN).should == "Guten Tag"
+    @babel.translate(ENGLISH, GERMAN).should == "Guten Tag"
   end
 
   it "should return 'buon pomeriggio'" do
-    @babel.translate(Translator::Constants::ENGLISH, Translator::Constants::ITALIAN).should == "buon pomeriggio"
+    @babel.translate(ENGLISH, ITALIAN).should == "buon pomeriggio"
   end
 
   it "should return 'boa tarde'" do
-    @babel.translate(Translator::Constants::ENGLISH, Translator::Constants::PORTUGESE).should == "boa tarde"
+    @babel.translate(ENGLISH, PORTUGESE).should == "boa tarde"
   end
 
   it "should translate to japanese" do
